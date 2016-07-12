@@ -13,3 +13,10 @@ cd $HOME
 git clone https://github.com/aminyou/telepoker.git -b supergroups
 
 cd telepoker
+
+
+auto launch :
+killall screen
+killall tmux
+killall telegram-cli
+tmux new-session -s script "bash steady.sh -t"
