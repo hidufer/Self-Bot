@@ -1,42 +1,27 @@
 do
-    function run(msg, matches)
-        
-  local text = [[
-TelePoker Bot  🔭
-An advanced administration bot based on TG-CLI written in Lua
 
-Admins: 😎
+function run(msg, matches)
+local reply_id = msg['id']
+local poker = {'پوکر نگاییدم😐','پوکر نده جنده 😐😐','کیونی چرا پوکر میدی',
+                  'کیرم تو پوکر😐','گاییدم😐',' نگاییدم😐',
+                  'کیر خر پوکر نده😐',' نفر بعدی بوکر بده بن 😐','کیری پوک نده😐',
+                  'مگه کونت گزاشتم پوکر میدی؟😐',' 😐',
+                  'عمه اونی که پوکر داد رو گاییدم😐',
+                  'بازم پوکر؟😐',' گه پوکر نبود تو چیکار میکردی؟😐',
+                  'کون که نمیدی پوکر هم میدی؟😐',' کسی که کص یا شاخ نباشد حق فرستادن پوکر را ندارد😐','D:',
+                  'نگاییدم😐'}
 
-🔥 @pokerfa3e [Founder & Developer] 🔥
-
-🔥 @blackwolf2353 [Sudo & Manager] 🔥
-
-🔥 @MakhofMan [Sudo & Manager] 🔥
-
-🔥 @saji_gham [Sudo] 🔥
-
-🔥 @Artin_hiphopi [Sudo] 🔥
-
-Special thanks to :
- @Artin_hiphopi & @o_service_tow ❤️
-
-To contact us : @TelePokermsgBot
-
-Our channels
-📡 @TelePokerTM
-]]
-    return text
-  end
+if matches[1] == '😐' then
+    if not is_sudo(msg) then
+return poker[math.random(#poker)]
+end
 end 
-
+end
 return {
-  description = "about for bot.  ", 
-  usage = {
-    "memberhelp: Show bota bout.",
-  },
-  patterns = {
-    "^([Pp]oker)$",
-    "^([/#!][Pp]oker)$",
-  }, 
-  run = run,
+patterns = {
+    "😐"
+},
+run = run
 }
+
+end
